@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #fefefe;
+}
+
+.navbar {
+  box-shadow: 0px 2px 4px -1px rgba(black, 0.3);
+}
+
+// utils
+.y-auto {
+  overflow-y: auto;
+}
+
+@import './spinner';

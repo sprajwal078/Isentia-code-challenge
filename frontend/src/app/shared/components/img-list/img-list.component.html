@@ -1,0 +1,61 @@
+<div>
+  <!-- search bar -->
+  <div class="d-flex mb-3">
+  <tag-input
+      [(ngModel)]="tags"
+      secondaryPlaceholder="Search Images by Tags"
+      placeholder="More tags"
+      theme='bootstrap'
+      (ngModelChange)="fetchData()"
+  >
+  </tag-input>
+  </div>
+
+  <!-- section Title -->
+  <h6 class="text-center text-capitalize">
+    {{feed?.title}}
+  </h6>
+
+  <!-- items list -->
+  <section class="mt-4">
+    <div class="row">
+        <!-- the gird view -->
+
+        <!-- colum1 -->
+        <div class="col-md-3 col-sm-12 p-0">
+          <ng-container *ngFor="let imgItem of feed?.items; index as i">
+            <isen-img-item [image]="imgItem" *ngIf="i % 4 === 0">
+            </isen-img-item>
+          </ng-container>
+        </div>
+
+        <!-- column2 -->
+        <div class="col-md-3 col-sm-12 p-0">
+          <ng-container *ngFor="let imgItem of feed?.items; index as i">
+            <isen-img-item [image]="imgItem" *ngIf="i % 4 === 1">
+            </isen-img-item>
+          </ng-container>
+        </div>
+
+        <!-- column3 -->
+        <div class="col-md-3 col-sm-12 p-0">
+          <ng-container *ngFor="let imgItem of feed?.items; index as i">
+            <isen-img-item [image]="imgItem" *ngIf="i % 4 === 2">
+            </isen-img-item>
+          </ng-container>
+        </div>
+
+        <!-- column4 -->
+        <div class="col-md-3 col-sm-12 p-0">
+          <ng-container *ngFor="let imgItem of feed?.items; index as i">
+            <isen-img-item [image]="imgItem" *ngIf="i % 4 === 3">
+            </isen-img-item>
+          </ng-container>
+        </div>
+
+        <div class="my-4 text-center col-12" *ngIf="feed && (!feed.items || !feed.items.length)">
+          <ngb-alert type="danger">No Result Found</ngb-alert>
+        </div>
+    </div>
+  </section>
+</div>

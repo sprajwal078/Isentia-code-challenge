@@ -1,0 +1,26 @@
+figure {
+  position: relative;
+  border: 1px solid rgba(black, .1);
+  .captions-container {
+    display: none;
+    bottom: 0;
+    position: absolute;
+    padding: .5rem;
+  }
+  caption {
+    color: white;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0;
+    text-shadow: 1px 1px 1px black;
+    line-height: 1em;
+  }
+  &:hover {
+    .captions-container{
+      display: block;
+      max-width: 100%;
+    }
+  }
+}
